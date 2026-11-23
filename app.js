@@ -1,5 +1,5 @@
 const SUPABASE_URL = "https://josnqfgwebmxdblfzobk.supabase.co/rest/v1/";
-const SUPABASE_ANON_KEY = "sb_publishable_4WTotPf-jRxaEGmXLimUyw_mOOGSeyg";
+const SUPABASE_ANON_KEY = "sb_publishable_qANxkpzyTFGQeBCtPO9ndA_M6-AFiDU";
 const COUNTER_ID = "shared";
 const LOCAL_CACHE_KEY = "two_person_counter_supabase_cache_v1";
 
