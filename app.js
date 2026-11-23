@@ -110,7 +110,7 @@ async function handleNfcIncrement() {
   window.history.replaceState({}, document.title, cleanUrl);
 
   // Aktuellen Stand der Zeile 'shared' holen
-  const { data, error: selectError } = await supabase
+  const { data, error: selectError } = await supabaseClient
     .from("counter")
     .select("p1, p2")
     .eq("id", "shared")
@@ -123,7 +123,7 @@ async function handleNfcIncrement() {
 
   const nextValue = (data[target] ?? 0) + 1;
 
-  const { error: updateError } = await supabase
+  const { error: updateError } = await supabaseClient
     .from("counter")
     .update({ [target]: nextValue })
     .eq("id", "shared");
