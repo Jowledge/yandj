@@ -6,6 +6,16 @@
   <title>2-Personen-Counter</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+<script>
+self.addEventListener("install", () => {
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(self.clients.claim());
+});
+</script>  
+  
 <body>
   <main class="app">
     <button id="p1Btn" class="player-btn player-1" type="button">
@@ -27,3 +37,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
