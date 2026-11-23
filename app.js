@@ -132,3 +132,11 @@ async function handleNfcIncrement() {
     console.error("NFC-Update fehlgeschlagen:", updateError);
   }
 }
+
+async function initApp() {
+  await handleNfcIncrement();
+  await loadCounter();
+  subscribeToCounter();
+}
+
+initApp();
