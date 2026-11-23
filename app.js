@@ -27,7 +27,7 @@ function render() {
 
 async function fetchInitialCounter() {
   const { data, error } = await supabaseClient
-    .from("counters")
+    .from("counter")
     .select("p1, p2")
     .eq("id", COUNTER_ID)
     .single();
@@ -50,7 +50,7 @@ async function updateCounter(nextP1, nextP2) {
   render();
 
   const { error } = await supabaseClient
-    .from("counters")
+    .from("counter")
     .update({ p1: state.p1, p2: state.p2 })
     .eq("id", COUNTER_ID);
 
@@ -82,7 +82,7 @@ supabaseClient
     {
       event: "UPDATE",
       schema: "public",
-      table: "counters",
+      table: "counter",
       filter: `id=eq.${COUNTER_ID}`,
     },
     (payload) => {
