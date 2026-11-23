@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2-Personen-Counter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <button id="p1Btn" class="player-btn player-1" type="button">
+      <span class="player-label">Person 1</span>
+      <span id="p1Count" class="player-count">0</span>
+    </button>
+
+    <button id="p2Btn" class="player-btn player-2" type="button">
+      <span class="player-label">Person 2</span>
+      <span id="p2Count" class="player-count">0</span>
+    </button>
+
+    <button id="resetBtn" class="reset-btn" type="button">
+      Zähler zurücksetzen
+    </button>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

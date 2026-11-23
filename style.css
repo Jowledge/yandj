@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #111827;
+    color: #f9fafb;
+  }
+  
+  .app {
+    min-height: 100dvh;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .player-btn {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    touch-action: manipulation;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.08s ease, filter 0.12s ease;
+  }
+  
+  .player-btn:active {
+    transform: scale(0.98);
+    filter: brightness(0.94);
+  }
+  
+  .player-1 {
+    background-color: #0b7619;
+  }
+  
+  .player-2 {
+    background-color: #dc2626;
+  }
+  
+  .player-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .player-count {
+    font-size: 3.75rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .reset-btn {
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    color: #e5e7eb;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  
+  .reset-btn:active {
+    background-color: #374151;
+  }
