@@ -96,3 +96,39 @@ supabaseClient
 
 render();
 fetchInitialCounter();
+
+async function handleNfcIncrement() {
+  const params = new URLSearchParams(window.location.search);
+  const target = params.get("add");
+
+  if (target !== "p1" && target !== "p2") {
+    return;
+  }
+
+  // URL sofort bereinigen, damit Reload nicht doppelt zählt
+  const cleanUrl = window.location.origin + window.location.pathname;
+  window.history.replaceState({}, document.title, cleanUrl);
+
+  // Aktuellen Stand der Zeile 'shared' holen
+  const { data, error: selectError } = await supabase
+    .from("counter")
+    .select("p1, p2")
+    .eq("id", "shared")
+    .single();
+
+  if (selectError || !data) {
+    console.error("NFC-Zähler konnte nicht gelesen werden:", selectError);
+    return;
+  }
+
+  const nextValue = (data[target] ?? 0) + 1;
+
+  const { error: updateError } = await supabase
+    .from("counter")
+    .update({ [target]: nextValue })
+    .eq("id", "shared");
+
+  if (updateError) {
+    console.error("NFC-Update fehlgeschlagen:", updateError);
+  }
+}
